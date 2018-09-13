@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
-    descp {Faker::Starwars.character}
-    delivery_id nil
+    descp {Faker::StarWars.character}
+    delivery
 
   end
 end

@@ -6,5 +6,14 @@ FactoryBot.define do
     tracking_number { Faker::Code.asin }
     user
 
+    factory :delivery_with_items do
+      transient do
+        items_count { 10 }
+      end
+
+      after(:create) do |delivery, evaluator|
+        create_list(:item, evaluator.items_count, delivery: delivery)
+      end
+    end
   end
 end
